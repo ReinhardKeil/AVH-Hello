@@ -61,7 +61,7 @@ jobs:
         run: |
             cbuild Hello.csolution.yml --update-rte --packs \
                 --context Hello.${{ matrix.build.type }}+${{ matrix.target.type }} \
-                --toolchain ${{ matrix.compiler.name }} --rebuild
+                --toolchain ${{ matrix.compiler.name }} --rebuild --frozen-packs
 
       - name: Execute context Hello.${{ matrix.build.type }}+${{ matrix.target.type }} with ${{ matrix.compiler.name }}
         working-directory: ./
